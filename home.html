@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Image Gallery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(images/assets/wallpaper28.jpeg) repeat center center / cover;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #000000;
+      padding: 5px;
+      font-size: larger;
+      color: white;
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      display: inline;
+      padding-left: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+    }
+
+    .category{
+      text-align: center;
+      font-size: 30px;
+      padding: 15px;
+    }
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+      gap: 15px;
+      padding: 10px;
+      position: relative;
+      z-index: 0;
+      
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 5px 5px 10px 1px black;
+      transition: transform 0.3s ease;
+      opacity: 0.5;
+      
+    }
+
+    .gallery img:hover {
+      transform: scale(1.20);
+      border: 2px solid black;
+      opacity: 1;
+    }
+
+    footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    .footer-section {
+      text-align: left;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 10px;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .footer-section a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      font-size: 12px;
+    }
+
+    a{text-decoration: none;}
+
+    .over{
+      width: 100%;
+      z-index: 1;
+      color: black;
+      text-align: center;
+      margin-top: -203PX;
+      border-radius: 10px;
+      font-size: 30PX;
+      opacity: 1;
+      border: 82px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo/logo.jpeg" alt="Logo"></a>
+      </div>
+      <h1>IMAGE-GALLERY</h1>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="pages/nature/index.html">Nature</a></li>
+        <li><a href="pages/animal/index.html">Animal</a></li>
+        <li><a href="pages/car/index.html">Car</a></li>
+        <li><a href="pages/bike/index.html">Bike</a></li>
+        <li><a href="pages/bird/index.html">Bird</a></li>
+        <li><a href="pages/insect/index.html">insect</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="category"><b>CATEGORY</b></div>
+
+  <div class="gallery">
+
+    <a href="pages/nature/index.html"><img src="images/assets/nature/nature1.jpeg" alt="nature"><div class="over">NATURE</div></a>
+    <a href="pages/animal/index.html"><img src="images\assets/animal/animal1.jpeg" alt="animal"><div class="over">ANIMAL</div></a>
+    <a href="pages/car/index.html"><img src="images\assets/car/car1.jpeg" alt="car"><div class="over">CAR</div></a>
+    <a href="pages/bike/index.html"><img src="images\assets/bike/bike1.jpeg" alt="bike"><div class="over">BIKE</div></a>
+    <a href="pages/bird/index.html"><img src="images\assets/bird/bird1.jpeg" alt="Image 1"><div class="over">BIRD</div></a>
+    <a href="pages/insect/index.html"><img src="images\assets/insect/insect1.jpeg" alt="Image 1"><div class="over">INSECT</div></a>
+  </div>
+  <br>
+  <hr>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We are passionate about creating stunning image galleries and sharing inspiration through photography.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: durgeshkumar947295@gmail.com</p>
+        <p>Phone: 8541942438</p>
+        <p>Address: bellandur, bengaluru, Karnataka</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <a href="#" target="_blank">Facebook</a> |
+        <a href="#" target="_blank">Twitter</a> |
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Image Gallery. All rights reserved by Durgesh Kumar.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
