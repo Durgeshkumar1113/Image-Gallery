@@ -12,18 +12,6 @@
       box-sizing: border-box;
     }
 
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url(images/assets/wallpaper28.jpeg) repeat center center / cover;
-      opacity: 0.5;
-      z-index: -1;
-    }
-
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -61,37 +49,63 @@
       color: #00bcd4;
     }
 
-    .category{
+    .category {
       text-align: center;
       font-size: 30px;
       padding: 15px;
     }
 
-
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+      min-height: 680px;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
       gap: 15px;
-      padding: 10px;
-      position: relative;
-      z-index: 0;
-      
+      padding:  10px 100px;
     }
+
+    .card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 3px 3px 8px 2px black;
+    } 
 
     .gallery img {
       width: 100%;
       height: 100%;
       border-radius: 8px;
-      box-shadow: 5px 5px 10px 1px black;
+      object-fit: cover;
+      display: block;
       transition: transform 0.3s ease;
-      opacity: 0.5;
-      
+      opacity: 1;
+
     }
 
-    .gallery img:hover {
+    .over {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.74);
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+
+    .card:hover {
       transform: scale(1.20);
       border: 2px solid black;
-      opacity: 1;
+      z-index: 1;
+    }
+    .over:hover{
+      background: none;
     }
 
     footer {
@@ -137,18 +151,8 @@
       font-size: 12px;
     }
 
-    a{text-decoration: none;}
-
-    .over{
-      width: 100%;
-      z-index: 1;
-      color: black;
-      text-align: center;
-      margin-top: -203PX;
-      border-radius: 10px;
-      font-size: 30PX;
-      opacity: 1;
-      border: 82px solid;
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -175,13 +179,38 @@
 
   <div class="gallery">
 
-    <a href="pages/nature/index.html"><img src="images/assets/nature/nature1.jpeg" alt="nature"><div class="over">NATURE</div></a>
-    <a href="pages/animal/index.html"><img src="images\assets/animal/animal1.jpeg" alt="animal"><div class="over">ANIMAL</div></a>
-    <a href="pages/car/index.html"><img src="images\assets/car/car1.jpeg" alt="car"><div class="over">CAR</div></a>
-    <a href="pages/bike/index.html"><img src="images\assets/bike/bike1.jpeg" alt="bike"><div class="over">BIKE</div></a>
-    <a href="pages/bird/index.html"><img src="images\assets/bird/bird1.jpeg" alt="Image 1"><div class="over">BIRD</div></a>
-    <a href="pages/insect/index.html"><img src="images\assets/insect/insect1.jpeg" alt="Image 1"><div class="over">INSECT</div></a>
+    <a href="pages/nature/index.html" class="card">
+      <img src="images/assets/nature/nature1.jpeg" alt="nature">
+      <div class="over">NATURE</div>
+    </a>
+
+    <a href="pages/animal/index.html" class="card">
+      <img src="images/assets/animal/animal1.jpeg" alt="animal">
+      <div class="over">ANIMAL</div>
+    </a>
+
+    <a href="pages/car/index.html" class="card">
+      <img src="images/assets/car/car1.jpeg" alt="car">
+      <div class="over">CAR</div>
+    </a>
+
+    <a href="pages/bike/index.html" class="card">
+      <img src="images/assets/bike/bike1.jpeg" alt="bike">
+      <div class="over">BIKE</div>
+    </a>
+
+    <a href="pages/bird/index.html" class="card">
+      <img src="images/assets/bird/bird1.jpeg" alt="bird">
+      <div class="over">BIRD</div>
+    </a>
+
+    <a href="pages/insect/index.html" class="card">
+      <img src="images/assets/insect/insect1.jpeg" alt="insect">
+      <div class="over">INSECT</div>
+    </a>
+
   </div>
+
   <br>
   <hr>
   <footer>
